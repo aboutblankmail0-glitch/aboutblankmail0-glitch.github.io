@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>about:blank</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <button class="brand" data-view="home" aria-label="about:blank"><img src="assets/logo.png" alt="about:blank">About<span><b>Blank</b></span></button>
+  <nav aria-label="Main">
+    <button data-view="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</button>
+    <button data-view="titles"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Titles</button>
+    <button data-view="favorites"><svg viewBox="0 0 24 24"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 20.9l1.1-6.5L2.6 9.8l6.5-.9z"/></svg>Favorites</button>
+    <button data-view="chat"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4z"/></svg>Chat</button>
+  </nav>
+</header>
+
+<main>
+  <section class="view" id="view-home">
+    <div class="head" id="trend"><h2>Trending Titles</h2></div>
+    <div class="hero">
+      <div id="stage"></div>
+      <button class="arrow" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15.5 5l-7 7 7 7"/></svg></button>
+      <button class="arrow" id="next" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M8.5 5l7 7-7 7"/></svg></button>
+    </div>
+    <div id="dots"></div>
+    <div class="head"><h2>Other Titles</h2><button class="link" id="viewAll">View All &#8250;</button></div>
+    <div class="grid" id="popular"></div>
+  </section>
+
+  <section class="view" id="view-titles" hidden>
+    <div class="head"><h2>All Titles</h2></div>
+    <div class="tools"><input type="search" id="search" placeholder="Search titles" aria-label="Search titles"><div id="chips"></div></div>
+    <div class="grid" id="all"></div>
+  </section>
+
+  <section class="view" id="view-favorites" hidden>
+    <div class="head"><h2>Favorites</h2></div>
+    <div class="grid" id="favs"></div>
+  </section>
+</main>
+
+<footer><a href="mailto:aboutblankmail0@gmail.com">aboutblankmail0@gmail.com</a></footer>
+
+<div id="player" hidden>
+  <button id="home-btn" aria-label="Back to home"><img src="assets/logo.png" alt=""><span>Home</span></button>
+  <iframe id="frame" title="Title" allow="fullscreen; autoplay; gamepad; clipboard-write; microphone; camera" allowfullscreen></iframe>
+</div>
+
+<div id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="dlg"><h3 id="m-title">Chat</h3><p>This feature is disabled.</p><button id="m-close">OK</button></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
